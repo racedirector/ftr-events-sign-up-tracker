@@ -3,28 +3,3 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
-<<<<<<< HEAD
-
-.App-MainLogo {
-  height: 15vmin;
-}
-
-.App-header {
-  min-height: 21vmin;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.logos { 
-  display: flex;
-  justify-content: space-evenly;
-  padding-top: 50px;
-}
-
-.App-link {
-  color: #f1a20d;
-}
-=======
->>>>>>> 9f08bb0 (Initial commit)
