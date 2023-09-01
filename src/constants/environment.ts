@@ -1,0 +1,4 @@
+export const GET_FTR_EVENTS_SIGN_UPS =
+  process.env.REACT_APP_GET_FTR_EVENTS_SIGN_UP_COUNTS || "";
+export const GET_FTR_EVENTS_MASTER_SIGN_UPS =
+  process.env.REACT_APP_GET_FTR_EVENTS_MASTER_COUNTS || "";

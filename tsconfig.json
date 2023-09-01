@@ -5,8 +5,11 @@
     "jsx": "react",
     /* Modules */
     "module": "commonjs",
-    "baseUrl": ".",
     "resolveJsonModule": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    },
 
     /* Emit */
     "noEmit": true,
