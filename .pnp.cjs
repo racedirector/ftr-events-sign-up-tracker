@@ -98,7 +98,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["resolve-url-loader", "npm:5.0.0"],\
             ["sass-loader", "virtual:db5c0c5909cec069b2e3ba7ee38408329830b480cd585a36ae26b7923e766536a759aa5bec209cce916a9da1ac8737ce2d1d5681e2525296ed5c20519cbcd465#npm:13.3.2"],\
             ["semver", "npm:7.5.4"],\
-            ["source-map-loader", "virtual:db5c0c5909cec069b2e3ba7ee38408329830b480cd585a36ae26b7923e766536a759aa5bec209cce916a9da1ac8737ce2d1d5681e2525296ed5c20519cbcd465#npm:3.0.2"],\
+            ["source-map-loader", "virtual:db5c0c5909cec069b2e3ba7ee38408329830b480cd585a36ae26b7923e766536a759aa5bec209cce916a9da1ac8737ce2d1d5681e2525296ed5c20519cbcd465#npm:4.0.1"],\
             ["style-loader", "virtual:db5c0c5909cec069b2e3ba7ee38408329830b480cd585a36ae26b7923e766536a759aa5bec209cce916a9da1ac8737ce2d1d5681e2525296ed5c20519cbcd465#npm:3.3.3"],\
             ["tailwindcss", "npm:3.3.3"],\
             ["terser-webpack-plugin", "virtual:db5c0c5909cec069b2e3ba7ee38408329830b480cd585a36ae26b7923e766536a759aa5bec209cce916a9da1ac8737ce2d1d5681e2525296ed5c20519cbcd465#npm:5.3.9"],\
@@ -13423,7 +13423,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["resolve-url-loader", "npm:5.0.0"],\
             ["sass-loader", "virtual:db5c0c5909cec069b2e3ba7ee38408329830b480cd585a36ae26b7923e766536a759aa5bec209cce916a9da1ac8737ce2d1d5681e2525296ed5c20519cbcd465#npm:13.3.2"],\
             ["semver", "npm:7.5.4"],\
-            ["source-map-loader", "virtual:db5c0c5909cec069b2e3ba7ee38408329830b480cd585a36ae26b7923e766536a759aa5bec209cce916a9da1ac8737ce2d1d5681e2525296ed5c20519cbcd465#npm:3.0.2"],\
+            ["source-map-loader", "virtual:db5c0c5909cec069b2e3ba7ee38408329830b480cd585a36ae26b7923e766536a759aa5bec209cce916a9da1ac8737ce2d1d5681e2525296ed5c20519cbcd465#npm:4.0.1"],\
             ["style-loader", "virtual:db5c0c5909cec069b2e3ba7ee38408329830b480cd585a36ae26b7923e766536a759aa5bec209cce916a9da1ac8737ce2d1d5681e2525296ed5c20519cbcd465#npm:3.3.3"],\
             ["tailwindcss", "npm:3.3.3"],\
             ["terser-webpack-plugin", "virtual:db5c0c5909cec069b2e3ba7ee38408329830b480cd585a36ae26b7923e766536a759aa5bec209cce916a9da1ac8737ce2d1d5681e2525296ed5c20519cbcd465#npm:5.3.9"],\
@@ -20756,17 +20756,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["source-map-loader", [\
-        ["npm:3.0.2", {\
-          "packageLocation": "./.yarn/cache/source-map-loader-npm-3.0.2-6e868d7f08-d5a4e2ab19.zip/node_modules/source-map-loader/",\
+        ["npm:4.0.1", {\
+          "packageLocation": "./.yarn/cache/source-map-loader-npm-4.0.1-0851efb838-4ddca8b03d.zip/node_modules/source-map-loader/",\
           "packageDependencies": [\
-            ["source-map-loader", "npm:3.0.2"]\
+            ["source-map-loader", "npm:4.0.1"]\
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:db5c0c5909cec069b2e3ba7ee38408329830b480cd585a36ae26b7923e766536a759aa5bec209cce916a9da1ac8737ce2d1d5681e2525296ed5c20519cbcd465#npm:3.0.2", {\
-          "packageLocation": "./.yarn/__virtual__/source-map-loader-virtual-d0a49d550e/0/cache/source-map-loader-npm-3.0.2-6e868d7f08-d5a4e2ab19.zip/node_modules/source-map-loader/",\
+        ["virtual:db5c0c5909cec069b2e3ba7ee38408329830b480cd585a36ae26b7923e766536a759aa5bec209cce916a9da1ac8737ce2d1d5681e2525296ed5c20519cbcd465#npm:4.0.1", {\
+          "packageLocation": "./.yarn/__virtual__/source-map-loader-virtual-b81511acbe/0/cache/source-map-loader-npm-4.0.1-0851efb838-4ddca8b03d.zip/node_modules/source-map-loader/",\
           "packageDependencies": [\
-            ["source-map-loader", "virtual:db5c0c5909cec069b2e3ba7ee38408329830b480cd585a36ae26b7923e766536a759aa5bec209cce916a9da1ac8737ce2d1d5681e2525296ed5c20519cbcd465#npm:3.0.2"],\
+            ["source-map-loader", "virtual:db5c0c5909cec069b2e3ba7ee38408329830b480cd585a36ae26b7923e766536a759aa5bec209cce916a9da1ac8737ce2d1d5681e2525296ed5c20519cbcd465#npm:4.0.1"],\
             ["@types/webpack", null],\
             ["abab", "npm:2.0.6"],\
             ["iconv-lite", "npm:0.6.3"],\
