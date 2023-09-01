@@ -1,0 +1,16 @@
+{
+  "presets": ["react-app"],
+  "plugins": [
+    ["@babel/plugin-proposal-class-properties", { "loose": true }],
+    [
+      "module-resolver",
+      {
+        "alias": {
+          "^react-native$": "react-native-web",
+          "^@/(.+)": "./src/\\1"
+        }
+      }
+    ],
+    "react-native-web"
+  ]
+}
