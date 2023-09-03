@@ -68,6 +68,7 @@ export const TeamList: React.FC<TeamListProps> = ({
   contentContainerStyle,
   ...props
 }) => {
+  const colors = useColors();
   const [expandedIndexes, setExpandedIndexes] = useState<(string | number)[]>(
     []
   );
@@ -81,11 +82,51 @@ export const TeamList: React.FC<TeamListProps> = ({
       extraData={expandedIndexes}
       ListHeaderComponent={() => (
         <View style={[styles.rowContainer, styles.headerContainer]}>
-          <Text style={[styles.rowLabel, styles.headerLabel]}>#</Text>
-          <Text style={[styles.rowLabel, styles.headerLabel]}>Name</Text>
-          <Text style={[styles.rowLabel, styles.headerLabel]}>Team ID</Text>
-          <Text style={[styles.rowLabel, styles.headerLabel]}>Car</Text>
-          <Text style={[styles.rowLabel, styles.headerLabel]}>Pro</Text>
+          <Text
+            style={[
+              styles.rowLabel,
+              styles.headerLabel,
+              { color: colors.text },
+            ]}
+          >
+            #
+          </Text>
+          <Text
+            style={[
+              styles.rowLabel,
+              styles.headerLabel,
+              { color: colors.text },
+            ]}
+          >
+            Name
+          </Text>
+          <Text
+            style={[
+              styles.rowLabel,
+              styles.headerLabel,
+              { color: colors.text },
+            ]}
+          >
+            Team ID
+          </Text>
+          <Text
+            style={[
+              styles.rowLabel,
+              styles.headerLabel,
+              { color: colors.text },
+            ]}
+          >
+            Car
+          </Text>
+          <Text
+            style={[
+              styles.rowLabel,
+              styles.headerLabel,
+              { color: colors.text },
+            ]}
+          >
+            Pro
+          </Text>
         </View>
       )}
       renderSectionHeader={({ section: { data: _data, teamId, ...props } }) => (
