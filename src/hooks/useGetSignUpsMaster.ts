@@ -54,12 +54,18 @@ export const useGetSignups: UseGetSignUpsHook = () => {
       },
     });
 
+    console.log("Got response:", response);
     const json = await response.json();
+    console.log("Got response json:", json);
     setSignUps(json);
   }, []);
 
   useEffect(() => {
-    fetchSignUps();
+    try {
+      fetchSignUps();
+    } catch (e) {
+      console.log("Error fetching signups:", e);
+    }
   }, [fetchSignUps]);
 
   return { data: signUps, refetch: fetchSignUps };
