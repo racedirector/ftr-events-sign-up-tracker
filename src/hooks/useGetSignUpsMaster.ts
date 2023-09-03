@@ -1,9 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import { ColorValue } from "react-native";
-import {
-  GET_FTR_EVENTS_MASTER_SIGN_UPS,
-  GET_FTR_EVENTS_SIGN_UPS,
-} from "@/constants/environment";
+import { GET_FTR_EVENTS_MASTER_SIGN_UPS } from "@/constants/environment";
 
 export type NetworkDriver = {
   name: string;
