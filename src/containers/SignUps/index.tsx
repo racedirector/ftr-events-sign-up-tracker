@@ -4,72 +4,72 @@ import {
   ClassParticipationCountHeader,
   ClassParticipationCountHeaderItem,
 } from "@/components/ClassParticipationCountHeader";
-import { TeamList } from "@/components/TeamList";
+// import { TeamList } from "@/components/TeamList";
 import useColors from "@/hooks/useColors";
-import useGetSignUps, { NetworkTeam } from "@/hooks/useGetSignUpsMaster";
+// import useGetSignUps, { NetworkTeam } from "@/hooks/useGetSignUpsMaster";
+import useGetSignUpsByClass from "@/hooks/useGetSignUps";
 
-type TeamsByCarClass = {
-  [carClass: string]: NetworkTeam[];
-};
+// interface ClassSectionProps {
+//   title: string;
+//   teams: NetworkTeam[];
+// }
 
-interface ClassSectionProps {
-  title: string;
-  teams: NetworkTeam[];
-}
+// const ClassSection: React.FC<ClassSectionProps> = ({
+//   title = "Class",
+//   teams,
+// }) => {
+//   const colors = useColors();
+//   return (
+//     <View>
+//       <View style={styles.classSectionHeader}>
+//         <Text style={[styles.classSectionHeaderTitle, { color: colors.text }]}>
+//           {title}
+//         </Text>
+//       </View>
+//       <TeamList
+//         scrollEnabled={false}
+//         style={[
+//           styles.teamList,
+//           {
+//             backgroundColor: colors.card,
+//           },
+//         ]}
+//         contentContainerStyle={styles.teamListContentContainer}
+//         teams={teams.map(({ drivers, ...item }) => ({
+//           ...item,
+//           data: [drivers],
+//         }))}
+//       />
+//     </View>
+//   );
+// };
 
-const ClassSection: React.FC<ClassSectionProps> = ({
-  title = "Class",
-  teams,
-}) => {
-  const colors = useColors();
-  return (
-    <View>
-      <View style={styles.classSectionHeader}>
-        <Text style={[styles.classSectionHeaderTitle, { color: colors.text }]}>
-          {title}
-        </Text>
-      </View>
-      <TeamList
-        scrollEnabled={false}
-        style={[
-          styles.teamList,
-          {
-            backgroundColor: colors.card,
-          },
-        ]}
-        contentContainerStyle={styles.teamListContentContainer}
-        teams={teams.map(({ drivers, ...item }) => ({
-          ...item,
-          data: [drivers],
-        }))}
-      />
-    </View>
-  );
+const colorForClass = (className: string) => {
+  switch (className) {
+    case "GT3":
+      return "#fce8b2";
+    case "GT4":
+      return "#a4c2f4";
+    case "TCR":
+      return "#ea9999";
+    default:
+      return "#666";
+  }
 };
 
 export interface SignUpListProps {}
 
 export const SignUpList: React.FC<SignUpListProps> = () => {
   const colors = useColors();
-  const { data: { signUpCounts = {} } = {} } = useGetSignUps();
+  const { data = {} } = useGetSignUpsByClass();
 
   const headerCounts: ClassParticipationCountHeaderItem[] = useMemo(() => {
-    return Object.entries(signUpCounts).map(([name, classDetails]) => ({
+    return Object.entries(data).map(([name, count]) => ({
       name,
-      count: classDetails.count,
-      color: classDetails.color,
+      count,
+      color: colorForClass(name),
     }));
-  }, [signUpCounts]);
-
-  const teams: TeamsByCarClass = useMemo(() => {
-    return Object.entries(signUpCounts).reduce(
-      (acc, [key, { teams }]) => ({
-        ...acc,
-        [key]: teams,
-      }),
-      {}
-    );
-  }, [signUpCounts]);
+  }, [data]);
 
   return (
     <>
@@ -92,7 +92,7 @@ export const SignUpList: React.FC<SignUpListProps> = () => {
         <ClassParticipationCountHeader counts={headerCounts} />
       </View>
 
-      <View style={styles.classParticipantSection}>
+      {/* <View style={styles.classParticipantSection}>
         <Text
           style={[styles.classParticipantSectionTitle, { color: colors.text }]}
         >
@@ -101,7 +101,7 @@ export const SignUpList: React.FC<SignUpListProps> = () => {
         <ClassSection title="GT3" teams={teams["GT3"] || []} />
         <ClassSection title="GT4" teams={teams["GT4"] || []} />
         <ClassSection title="TCR" teams={teams["TCR"] || []} />
-      </View>
+      </View> */}
     </>
   );
 };
