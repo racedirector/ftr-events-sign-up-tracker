@@ -1,6 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
 import { ColorValue } from "react-native";
-import { GET_FTR_EVENTS_MASTER_SIGN_UPS } from "@/constants/environment";
 
 export type NetworkDriver = {
   name: string;
@@ -37,6 +36,9 @@ export type NetworkResourceShape = {
   signUpCounts: NetworkCarClassMap;
 };
 
+const GET_FTR_EVENTS_MASTER_SIGN_UPS =
+  "https://bzmnmsu2w7.execute-api.us-east-1.amazonaws.com/readFTREventsMasterCounts";
+
 export type UseGetSignUpsHookResult = {
   data?: NetworkResourceShape;
   refetch: () => void;
@@ -47,7 +49,6 @@ export type UseGetSignUpsHook = () => UseGetSignUpsHookResult;
 export const useGetSignups: UseGetSignUpsHook = () => {
   const [signUps, setSignUps] = useState<NetworkResourceShape>();
   const fetchSignUps = useCallback(async () => {
-    console.log(GET_FTR_EVENTS_MASTER_SIGN_UPS);
     const response = await fetch(GET_FTR_EVENTS_MASTER_SIGN_UPS, {
       method: "GET",
       headers: {

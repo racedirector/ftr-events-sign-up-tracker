@@ -1,7 +1,9 @@
 import { useCallback, useEffect, useState } from "react";
-import { GET_FTR_EVENTS_SIGN_UPS } from "@/constants/environment";
 
 type SignUpsMap = Record<string, number>;
+
+const GET_FTR_EVENTS_SIGN_UPS =
+  "https://bzmnmsu2w7.execute-api.us-east-1.amazonaws.com/readFTREventsSignUpCounts";
 
 type UseGetSignUpsHookResult = {
   data?: SignUpsMap;

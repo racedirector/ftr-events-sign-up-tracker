@@ -30,9 +30,6 @@ jobs:
 
       - name: Build
         run: yarn build
-        env:
-          REACT_APP_GET_FTR_EVENTS_MASTER_COUNTS: ${{ vars.REACT_APP_GET_FTR_EVENTS_MASTER_COUNTS }}
-          REACT_APP_GET_FTR_EVENTS_SIGN_UP_COUNTS: ${{ vars.REACT_APP_GET_FTR_EVENTS_SIGN_UP_COUNTS }}
 
       - name: Upload pages artifact
         uses: actions/upload-pages-artifact@v2
