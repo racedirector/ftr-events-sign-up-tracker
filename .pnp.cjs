@@ -71,7 +71,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-import", "virtual:db5c0c5909cec069b2e3ba7ee38408329830b480cd585a36ae26b7923e766536a759aa5bec209cce916a9da1ac8737ce2d1d5681e2525296ed5c20519cbcd465#npm:2.28.1"],\
             ["eslint-webpack-plugin", "virtual:db5c0c5909cec069b2e3ba7ee38408329830b480cd585a36ae26b7923e766536a759aa5bec209cce916a9da1ac8737ce2d1d5681e2525296ed5c20519cbcd465#npm:4.0.1"],\
             ["file-loader", "virtual:db5c0c5909cec069b2e3ba7ee38408329830b480cd585a36ae26b7923e766536a759aa5bec209cce916a9da1ac8737ce2d1d5681e2525296ed5c20519cbcd465#npm:6.2.0"],\
-            ["fs-extra", "npm:10.1.0"],\
+            ["fs-extra", "npm:11.1.1"],\
             ["gh-pages", "npm:6.0.0"],\
             ["html-webpack-plugin", "virtual:db5c0c5909cec069b2e3ba7ee38408329830b480cd585a36ae26b7923e766536a759aa5bec209cce916a9da1ac8737ce2d1d5681e2525296ed5c20519cbcd465#npm:5.5.3"],\
             ["i18n-js", "npm:4.3.0"],\
@@ -13799,7 +13799,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-import", "virtual:db5c0c5909cec069b2e3ba7ee38408329830b480cd585a36ae26b7923e766536a759aa5bec209cce916a9da1ac8737ce2d1d5681e2525296ed5c20519cbcd465#npm:2.28.1"],\
             ["eslint-webpack-plugin", "virtual:db5c0c5909cec069b2e3ba7ee38408329830b480cd585a36ae26b7923e766536a759aa5bec209cce916a9da1ac8737ce2d1d5681e2525296ed5c20519cbcd465#npm:4.0.1"],\
             ["file-loader", "virtual:db5c0c5909cec069b2e3ba7ee38408329830b480cd585a36ae26b7923e766536a759aa5bec209cce916a9da1ac8737ce2d1d5681e2525296ed5c20519cbcd465#npm:6.2.0"],\
-            ["fs-extra", "npm:10.1.0"],\
+            ["fs-extra", "npm:11.1.1"],\
             ["gh-pages", "npm:6.0.0"],\
             ["html-webpack-plugin", "virtual:db5c0c5909cec069b2e3ba7ee38408329830b480cd585a36ae26b7923e766536a759aa5bec209cce916a9da1ac8737ce2d1d5681e2525296ed5c20519cbcd465#npm:5.5.3"],\
             ["i18n-js", "npm:4.3.0"],\
