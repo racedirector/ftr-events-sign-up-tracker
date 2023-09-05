@@ -2,6 +2,7 @@ import React from "react";
 import { View } from "react-native";
 import { Text, makeStyles } from "@rneui/themed";
 import strings from "@/constants/strings";
+import ToggleThemeSwitch from "@/containers/ToggleThemeSwitch";
 
 export interface HeaderNavigationBarProps {}
 
@@ -41,7 +42,7 @@ export const HeaderNavigationBar: React.FC<HeaderNavigationBarProps> = () => {
               title={strings.t("header.socials.twitter")}
             />
           </View> */}
-
+          <ToggleThemeSwitch />
           {/* <Button title={strings.t("header.authentication.signIn")} /> */}
         </View>
       </View>

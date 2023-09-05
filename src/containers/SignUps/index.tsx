@@ -42,7 +42,7 @@ export const SignUpList: React.FC<SignUpListProps> = () => {
   );
 };
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   headerContainer: {
     paddingBottom: 20,
   },
@@ -54,7 +54,9 @@ const useStyles = makeStyles(() => ({
   headerDetail: {
     fontSize: 18,
   },
-  classParticipationContainer: {},
+  classParticipationContainer: {
+    backgroundColor: theme.colors.background,
+  },
   classParticipantSectionTitle: {
     fontSize: 24,
   },
