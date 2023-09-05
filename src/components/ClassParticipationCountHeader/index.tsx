@@ -1,41 +1,64 @@
 import React from "react";
-import { Text, View, StyleSheet, ColorValue } from "react-native";
+import {
+  Text,
+  View,
+  StyleSheet,
+  ColorValue,
+  StyleProp,
+  ViewStyle,
+} from "react-native";
 import useColors from "@/hooks/useColors";
 
-export type ClassParticipationCountHeaderItem = {
+export type ClassParticipationCountHeaderItemProps = {
   name: string;
-  count: number;
   color: ColorValue;
+  count: number;
   textColor?: ColorValue;
 };
 
+const ClassParticipationCountHeaderItem: React.FC<
+  ClassParticipationCountHeaderItemProps
+> = ({ name, color, textColor, count }) => {
+  return (
+    <View style={[styles.countContainer, { backgroundColor: color }]}>
+      <Text
+        style={[styles.classLabel, textColor ? { color: textColor } : null]}
+      >
+        {name}
+      </Text>
+      {count && (
+        <Text
+          style={[styles.countLabel, textColor ? { color: textColor } : null]}
+        >
+          {count}
+        </Text>
+      )}
+    </View>
+  );
+};
+
 export interface ClassParticipationCountHeaderProps {
-  counts: ClassParticipationCountHeaderItem[];
+  loading?: boolean;
+  placeholderCount?: number;
+  style?: StyleProp<ViewStyle>;
+  counts?: ClassParticipationCountHeaderItemProps[];
 }
 
 export const ClassParticipationCountHeader: React.FC<
   ClassParticipationCountHeaderProps
-> = ({ counts }) => {
+> = ({ counts = [], style }) => {
   const colors = useColors();
 
   return (
-    <View style={[styles.container, { backgroundColor: colors.background }]}>
-      {counts.map(({ name, count, color, textColor }, index) => (
-        <View
+    <View
+      style={[styles.container, { backgroundColor: colors.background }, style]}
+    >
+      {counts.map(({ name, ...props }, index) => (
+        <ClassParticipationCountHeaderItem
           key={`${name}-${index}`}
-          style={[styles.countContainer, { backgroundColor: color }]}
-        >
-          <Text
-            style={[styles.classLabel, textColor ? { color: textColor } : null]}
-          >
-            {name}
-          </Text>
-          <Text
-            style={[styles.countLabel, textColor ? { color: textColor } : null]}
-          >
-            {count}
-          </Text>
-        </View>
+          name={name}
+          {...props}
+        />
       ))}
     </View>
   );
