@@ -406,7 +406,13 @@ module.exports = function (webpackEnv) {
             // The preset includes JSX, Flow, TypeScript, and some ESnext features.
             {
               test: /\.(js|mjs|jsx|ts|tsx)$/,
-              include: paths.appSrc,
+              include: [
+                `${paths.appNodeModules}/@rneui/themed`,
+                `${paths.appNodeModules}/@rneui/base`,
+                `${paths.appNodeModules}/react-native-vector-icons`,
+                `${paths.appNodeModules}/react-native-ratings`,
+                paths.appSrc,
+              ],
               loader: require.resolve("babel-loader"),
               options: {
                 customize: require.resolve(
@@ -429,7 +435,7 @@ module.exports = function (webpackEnv) {
                 // This is a feature of `babel-loader` for webpack (not Babel itself).
                 // It enables caching results in ./node_modules/.cache/babel-loader/
                 // directory for faster rebuilds.
-                cacheDirectory: true,
+                // cacheDirectory: true,
                 // See #6846 for context on why cacheCompression is disabled
                 cacheCompression: false,
                 compact: isEnvProduction,
@@ -451,7 +457,7 @@ module.exports = function (webpackEnv) {
                     { helpers: true },
                   ],
                 ],
-                cacheDirectory: true,
+                // cacheDirectory: true,
                 // See #6846 for context on why cacheCompression is disabled
                 cacheCompression: false,
 

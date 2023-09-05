@@ -56,9 +56,7 @@ export const useGetSignups: UseGetSignUpsHook = () => {
       },
     });
 
-    console.log("Got response:", response);
     const json = await response.json();
-    console.log("Got response json:", json);
     setSignUps(json);
   }, []);
 

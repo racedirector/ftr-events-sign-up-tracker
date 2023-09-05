@@ -63,7 +63,7 @@ export interface TeamListProps
 }
 
 export const TeamList: React.FC<TeamListProps> = ({
-  teams,
+  teams = [],
   style,
   contentContainerStyle,
   ...props
