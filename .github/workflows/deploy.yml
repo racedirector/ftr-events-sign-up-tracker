@@ -36,16 +36,10 @@ jobs:
         with:
           path: ./build
 
-      - name: Upload artifacts
-        uses: actions/upload-artifact@v3
-        with:
-          name: react
-          path: ./build/
-
   deploy-pages:
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: https://racedirector.github.io/ftr-events-sign-up-tracker/
     runs-on: ubuntu-latest
     needs: build
     steps:
