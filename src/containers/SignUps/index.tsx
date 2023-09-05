@@ -2,7 +2,7 @@ import React, { useMemo } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import {
   ClassParticipationCountHeader,
-  ClassParticipationCountHeaderItem,
+  ClassParticipationCountHeaderItemProps,
 } from "@/components/ClassParticipationCountHeader";
 // import { TeamList } from "@/components/TeamList";
 import useColors from "@/hooks/useColors";
@@ -63,7 +63,7 @@ export const SignUpList: React.FC<SignUpListProps> = () => {
   const colors = useColors();
   const { data = {} } = useGetSignUpsByClass();
 
-  const headerCounts: ClassParticipationCountHeaderItem[] = useMemo(() => {
+  const headerCounts: ClassParticipationCountHeaderItemProps[] = useMemo(() => {
     return Object.entries(data).map(([name, count]) => ({
       name,
       count,
