@@ -1,10 +1,14 @@
 import { ClassParticipationCountHeader } from ".";
 import type { Meta, StoryObj } from "@storybook/react";
 
-
 const meta: Meta<typeof ClassParticipationCountHeader> = {
   title: "Components/Class Participation Count List Header",
   component: ClassParticipationCountHeader,
+  args: {
+    style: {
+      height: 200,
+    },
+  },
 };
 
 type Story = StoryObj<typeof ClassParticipationCountHeader>;

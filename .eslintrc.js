@@ -1,5 +1,9 @@
 module.exports = {
-  extends: ["react-app", "plugin:import/typescript"],
+  extends: [
+    "react-app",
+    "plugin:import/typescript",
+    "plugin:storybook/recommended",
+  ],
   parser: "@typescript-eslint/parser",
   parserOptions: {
     tsconfigRootDir: __dirname,
@@ -26,6 +30,11 @@ module.exports = {
         pathGroups: [
           {
             pattern: "react",
+            group: "builtin",
+            position: "before",
+          },
+          {
+            pattern: "react-native",
             group: "builtin",
             position: "before",
           },
