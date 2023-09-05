@@ -129,12 +129,12 @@ const useStyles = makeStyles((theme) => ({
   },
   textContainer: {},
   titleLabel: {
-    color: theme.colors.grey3,
+    color: theme.colors.text,
     fontWeight: "bold",
     fontSize: 36,
   },
   bodyLabel: {
-    color: theme.colors.grey3,
+    color: theme.colors.text,
   },
   formContainer: {},
   inputContainer: {
@@ -143,10 +143,10 @@ const useStyles = makeStyles((theme) => ({
   },
   input: {},
   emailField: {
-    color: theme.colors.grey3,
+    color: theme.colors.text,
   },
   passwordField: {
-    color: theme.colors.grey3,
+    color: theme.colors.text,
   },
   submitButton: {
     backgroundColor: theme.colors.primary,

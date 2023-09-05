@@ -2,13 +2,11 @@ import React, { useState } from "react";
 import {
   SectionList,
   SectionListProps,
-  StyleSheet,
-  Text,
   View,
   SectionListData,
   Pressable,
 } from "react-native";
-import useColors from "@/hooks/useColors";
+import { Text, makeStyles } from "@rneui/themed";
 import { DriverList, DriverListRowProps } from "../DriverList";
 
 interface TeamListRowProps {
@@ -26,19 +24,15 @@ const TeamListRow: React.FC<TeamListRowProps> = ({
   isPro,
   carNumber,
 }) => {
-  const colors = useColors();
+  const styles = useStyles(makeStyles);
 
   return (
     <View style={styles.rowContainer}>
-      <Text
-        style={[styles.rowLabel, { color: colors.text }]}
-      >{`#${carNumber}`}</Text>
-      <Text style={[styles.rowLabel, { color: colors.text }]}>{name}</Text>
-      <Text style={[styles.rowLabel, { color: colors.text }]}>{teamId}</Text>
-      <Text style={[styles.rowLabel, { color: colors.text }]}>{car}</Text>
-      <Text style={[styles.rowLabel, { color: colors.text }]}>
-        {isPro ? "Yes" : "No"}
-      </Text>
+      <Text style={styles.rowLabel}>{`#${carNumber}`}</Text>
+      <Text style={styles.rowLabel}>{name}</Text>
+      <Text style={styles.rowLabel}>{teamId}</Text>
+      <Text style={styles.rowLabel}>{car}</Text>
+      <Text style={styles.rowLabel}>{isPro ? "Yes" : "No"}</Text>
     </View>
   );
 };
@@ -68,7 +62,7 @@ export const TeamList: React.FC<TeamListProps> = ({
   contentContainerStyle,
   ...props
 }) => {
-  const colors = useColors();
+  const styles = useStyles(makeStyles);
   const [expandedIndexes, setExpandedIndexes] = useState<(string | number)[]>(
     []
   );
@@ -82,51 +76,11 @@ export const TeamList: React.FC<TeamListProps> = ({
       extraData={expandedIndexes}
       ListHeaderComponent={() => (
         <View style={[styles.rowContainer, styles.headerContainer]}>
-          <Text
-            style={[
-              styles.rowLabel,
-              styles.headerLabel,
-              { color: colors.text },
-            ]}
-          >
-            #
-          </Text>
-          <Text
-            style={[
-              styles.rowLabel,
-              styles.headerLabel,
-              { color: colors.text },
-            ]}
-          >
-            Name
-          </Text>
-          <Text
-            style={[
-              styles.rowLabel,
-              styles.headerLabel,
-              { color: colors.text },
-            ]}
-          >
-            Team ID
-          </Text>
-          <Text
-            style={[
-              styles.rowLabel,
-              styles.headerLabel,
-              { color: colors.text },
-            ]}
-          >
-            Car
-          </Text>
-          <Text
-            style={[
-              styles.rowLabel,
-              styles.headerLabel,
-              { color: colors.text },
-            ]}
-          >
-            Pro
-          </Text>
+          <Text style={[styles.rowLabel, styles.headerLabel]}>#</Text>
+          <Text style={[styles.rowLabel, styles.headerLabel]}>Name</Text>
+          <Text style={[styles.rowLabel, styles.headerLabel]}>Team ID</Text>
+          <Text style={[styles.rowLabel, styles.headerLabel]}>Car</Text>
+          <Text style={[styles.rowLabel, styles.headerLabel]}>Pro</Text>
         </View>
       )}
       renderSectionHeader={({ section: { data: _data, teamId, ...props } }) => (
@@ -160,7 +114,7 @@ export const TeamList: React.FC<TeamListProps> = ({
   );
 };
 
-const styles = StyleSheet.create({
+const useStyles = makeStyles((theme) => ({
   container: {
     alignSelf: "stretch",
   },
@@ -182,11 +136,12 @@ const styles = StyleSheet.create({
   rowLabel: {
     alignSelf: "stretch",
     flex: 1,
+    color: theme.colors.text,
   },
   driverList: {
     paddingVertical: 10,
     paddingHorizontal: 20,
   },
-});
+}));
 
 export default TeamList;

@@ -62,7 +62,7 @@ export const DriverList: React.FC<DriverListProps> = ({
   );
 };
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   container: {
     alignSelf: "stretch",
   },
@@ -87,7 +87,7 @@ const useStyles = makeStyles(() => ({
   rowLabel: {
     alignSelf: "stretch",
     flex: 1,
-    // color: theme.colors.text
+    color: theme.colors.text,
   },
 }));
 

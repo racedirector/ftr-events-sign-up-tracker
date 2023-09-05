@@ -1,5 +1,10 @@
 import React, { PropsWithChildren } from "react";
-import { ThemeProvider } from "@rneui/themed";
+import {
+  ThemeProvider,
+  createTheme,
+  darkColors,
+  lightColors,
+} from "@rneui/themed";
 import { CookiesProvider } from "react-cookie";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { HeaderNavigationBar } from "@/components/HeaderNavigationBar";
@@ -15,9 +20,20 @@ const DataProvider: React.FC<PropsWithChildren<{}>> = ({ children }) => (
   <CookiesProvider>{children}</CookiesProvider>
 );
 
+const theme = createTheme({
+  lightColors: {
+    ...lightColors,
+    text: "rgb(28, 28, 30)",
+  },
+  darkColors: {
+    ...darkColors,
+    text: "rgb(229, 229, 231)",
+  },
+});
+
 const UIProvider: React.FC<PropsWithChildren<{}>> = ({ children }) => (
   <SafeAreaProvider>
-    <ThemeProvider>{children}</ThemeProvider>
+    <ThemeProvider theme={theme}>{children}</ThemeProvider>
   </SafeAreaProvider>
 );
 
