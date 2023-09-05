@@ -1,48 +1,11 @@
 import React, { useMemo } from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { View } from "react-native";
+import { Text, makeStyles } from "@rneui/themed";
 import {
   ClassParticipationCountHeader,
   ClassParticipationCountHeaderItemProps,
 } from "@/components/ClassParticipationCountHeader";
-// import { TeamList } from "@/components/TeamList";
-import useColors from "@/hooks/useColors";
-// import useGetSignUps, { NetworkTeam } from "@/hooks/useGetSignUpsMaster";
 import useGetSignUpsByClass from "@/hooks/useGetSignUps";
-
-// interface ClassSectionProps {
-//   title: string;
-//   teams: NetworkTeam[];
-// }
-
-// const ClassSection: React.FC<ClassSectionProps> = ({
-//   title = "Class",
-//   teams,
-// }) => {
-//   const colors = useColors();
-//   return (
-//     <View>
-//       <View style={styles.classSectionHeader}>
-//         <Text style={[styles.classSectionHeaderTitle, { color: colors.text }]}>
-//           {title}
-//         </Text>
-//       </View>
-//       <TeamList
-//         scrollEnabled={false}
-//         style={[
-//           styles.teamList,
-//           {
-//             backgroundColor: colors.card,
-//           },
-//         ]}
-//         contentContainerStyle={styles.teamListContentContainer}
-//         teams={teams.map(({ drivers, ...item }) => ({
-//           ...item,
-//           data: [drivers],
-//         }))}
-//       />
-//     </View>
-//   );
-// };
 
 const colorForClass = (className: string) => {
   switch (className) {
@@ -60,7 +23,7 @@ const colorForClass = (className: string) => {
 export interface SignUpListProps {}
 
 export const SignUpList: React.FC<SignUpListProps> = () => {
-  const colors = useColors();
+  const styles = useStyles(makeStyles);
   const { data = {} } = useGetSignUpsByClass();
 
   const headerCounts: ClassParticipationCountHeaderItemProps[] = useMemo(() => {
@@ -72,41 +35,14 @@ export const SignUpList: React.FC<SignUpListProps> = () => {
   }, [data]);
 
   return (
-    <>
-      <View style={styles.headerContainer}>
-        <Text style={[styles.headerPageTitle, { color: colors.text }]}>
-          FTR Events S5 Sign Up Tracker
-        </Text>
-        <Text style={[styles.headerDetail, { color: colors.text }]}>
-          Sign up form here: https://forms.gle/4jVnK6a13AP1YvSXA
-        </Text>
-        <Text style={[styles.headerDetail, { color: colors.text }]}>
-          Discord here: https://discord.gg/gYuW9Gk8yA
-        </Text>
-      </View>
-
-      <View style={styles.classParticipationContainer}>
-        <Text style={[styles.classParticipationTitle, { color: colors.text }]}>
-          Sign ups by class
-        </Text>
-        <ClassParticipationCountHeader counts={headerCounts} />
-      </View>
-
-      {/* <View style={styles.classParticipantSection}>
-        <Text
-          style={[styles.classParticipantSectionTitle, { color: colors.text }]}
-        >
-          {"Team sign ups (click to expand and see line-up)"}
-        </Text>
-        <ClassSection title="GT3" teams={teams["GT3"] || []} />
-        <ClassSection title="GT4" teams={teams["GT4"] || []} />
-        <ClassSection title="TCR" teams={teams["TCR"] || []} />
-      </View> */}
-    </>
+    <View style={styles.classParticipationContainer}>
+      <Text style={styles.classParticipationTitle}>Sign ups by class</Text>
+      <ClassParticipationCountHeader counts={headerCounts} />
+    </View>
   );
 };
 
-const styles = StyleSheet.create({
+const useStyles = makeStyles(() => ({
   headerContainer: {
     paddingBottom: 20,
   },
@@ -138,6 +74,6 @@ const styles = StyleSheet.create({
   teamListContentContainer: {
     paddingHorizontal: 40,
   },
-});
+}));
 
 export default SignUpList;
