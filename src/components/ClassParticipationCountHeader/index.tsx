@@ -1,13 +1,6 @@
 import React from "react";
-import {
-  Text,
-  View,
-  StyleSheet,
-  ColorValue,
-  StyleProp,
-  ViewStyle,
-} from "react-native";
-import useColors from "@/hooks/useColors";
+import { View, ColorValue, StyleProp, ViewStyle } from "react-native";
+import { Text, makeStyles } from "@rneui/themed";
 
 export type ClassParticipationCountHeaderItemProps = {
   name: string;
@@ -19,6 +12,7 @@ export type ClassParticipationCountHeaderItemProps = {
 const ClassParticipationCountHeaderItem: React.FC<
   ClassParticipationCountHeaderItemProps
 > = ({ name, color, textColor, count }) => {
+  const styles = useStyles(makeStyles);
   return (
     <View style={[styles.countContainer, { backgroundColor: color }]}>
       <Text
@@ -47,12 +41,10 @@ export interface ClassParticipationCountHeaderProps {
 export const ClassParticipationCountHeader: React.FC<
   ClassParticipationCountHeaderProps
 > = ({ counts = [], style }) => {
-  const colors = useColors();
+  const styles = useStyles(makeStyles);
 
   return (
-    <View
-      style={[styles.container, { backgroundColor: colors.background }, style]}
-    >
+    <View style={[styles.container, style]}>
       {counts.map(({ name, ...props }, index) => (
         <ClassParticipationCountHeaderItem
           key={`${name}-${index}`}
@@ -64,10 +56,11 @@ export const ClassParticipationCountHeader: React.FC<
   );
 };
 
-const styles = StyleSheet.create({
+const useStyles = makeStyles((theme) => ({
   container: {
     flexDirection: "row",
     justifyContent: "space-between",
+    backgroundColor: theme.colors.background,
   },
   countContainer: {
     flex: 1,
@@ -83,6 +76,6 @@ const styles = StyleSheet.create({
   countLabel: {
     fontSize: 20,
   },
-});
+}));
 
 export default ClassParticipationCountHeader;

@@ -1,4 +1,22 @@
 const translations = {
+  header: {
+    title: "FTR Events: Sim3D GT Series",
+    register: "Register",
+    socials: {
+      instagram: "Instagram",
+      twitter: "Twitter",
+      discord: "Discord",
+    },
+    navigation: {
+      about: "About",
+      schedule: "Schedule",
+      register: "Register",
+      sponsors: "Sponsors",
+    },
+    authentication: {
+      signIn: "Sign In",
+    },
+  },
   fallback: {
     title: "loading...",
   },
@@ -12,6 +30,8 @@ const translations = {
   },
   signInForm: {
     title: "sign in to iRacing",
+    detail:
+      "sign in to iRacing to register for the series or view your current entry.",
     emailPlaceholder: "email",
     passwordPlaceholder: "password",
     submitTitle: "submit",

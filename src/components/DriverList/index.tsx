@@ -1,6 +1,6 @@
 import React from "react";
-import { FlatList, FlatListProps, StyleSheet, Text, View } from "react-native";
-import useColors from "@/hooks/useColors";
+import { FlatList, FlatListProps, View } from "react-native";
+import { Text, makeStyles } from "@rneui/themed";
 
 export interface DriverListRowProps {
   name: string;
@@ -15,14 +15,14 @@ export const DriverListRow: React.FC<DriverListRowProps> = ({
   iRating,
   license,
 }) => {
-  const colors = useColors();
+  const styles = useStyles(makeStyles);
 
   return (
     <View style={styles.rowContainer}>
-      <Text style={[styles.rowLabel, { color: colors.text }]}>{name}</Text>
-      <Text style={[styles.rowLabel, { color: colors.text }]}>{driverId}</Text>
-      <Text style={[styles.rowLabel, { color: colors.text }]}>{iRating}</Text>
-      <Text style={[styles.rowLabel, { color: colors.text }]}>{license}</Text>
+      <Text style={styles.rowLabel}>{name}</Text>
+      <Text style={styles.rowLabel}>{driverId}</Text>
+      <Text style={styles.rowLabel}>{iRating}</Text>
+      <Text style={styles.rowLabel}>{license}</Text>
     </View>
   );
 };
@@ -42,7 +42,7 @@ export const DriverList: React.FC<DriverListProps> = ({
   style,
   ...props
 }) => {
-  const colors = useColors();
+  const styles = useStyles(makeStyles);
 
   return (
     <FlatList
@@ -51,42 +51,10 @@ export const DriverList: React.FC<DriverListProps> = ({
       data={drivers}
       ListHeaderComponent={() => (
         <View style={[styles.rowContainer, styles.headerContainer]}>
-          <Text
-            style={[
-              styles.rowLabel,
-              styles.headerLabel,
-              { color: colors.text },
-            ]}
-          >
-            Name
-          </Text>
-          <Text
-            style={[
-              styles.rowLabel,
-              styles.headerLabel,
-              { color: colors.text },
-            ]}
-          >
-            Driver ID
-          </Text>
-          <Text
-            style={[
-              styles.rowLabel,
-              styles.headerLabel,
-              { color: colors.text },
-            ]}
-          >
-            iRating
-          </Text>
-          <Text
-            style={[
-              styles.rowLabel,
-              styles.headerLabel,
-              { color: colors.text },
-            ]}
-          >
-            License
-          </Text>
+          <Text style={[styles.rowLabel, styles.headerLabel]}>Name</Text>
+          <Text style={[styles.rowLabel, styles.headerLabel]}>Driver ID</Text>
+          <Text style={[styles.rowLabel, styles.headerLabel]}>iRating</Text>
+          <Text style={[styles.rowLabel, styles.headerLabel]}>License</Text>
         </View>
       )}
       renderItem={({ item: props }) => <DriverListRow {...props} />}
@@ -94,7 +62,7 @@ export const DriverList: React.FC<DriverListProps> = ({
   );
 };
 
-const styles = StyleSheet.create({
+const useStyles = makeStyles(() => ({
   container: {
     alignSelf: "stretch",
   },
@@ -119,7 +87,8 @@ const styles = StyleSheet.create({
   rowLabel: {
     alignSelf: "stretch",
     flex: 1,
+    // color: theme.colors.text
   },
-});
+}));
 
 export default DriverList;
