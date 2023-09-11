@@ -25,7 +25,7 @@
     "react-app-polyfill": "^3.0.0",
     "react-cookie": "^6.1.0",
     "react-dom": "^18.2.0",
-    "react-hook-form": "^7.46.0",
+    "react-hook-form": "^7.46.1",
     "react-native-crypto-js": "^1.0.0",
     "react-native-localize": "^3.0.2",
     "react-native-safe-area-context": "^4.7.2",
