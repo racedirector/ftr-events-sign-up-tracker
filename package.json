@@ -19,7 +19,7 @@
   "dependencies": {
     "@rneui/base": "^4.0.0-rc.8",
     "@rneui/themed": "^4.0.0-rc.8",
-    "i18n-js": "^4.3.0",
+    "i18n-js": "^4.3.2",
     "lodash": "^4.17.21",
     "react": "^18.2.0",
     "react-app-polyfill": "^3.0.0",
