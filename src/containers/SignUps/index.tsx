@@ -5,16 +5,17 @@ import {
   ClassParticipationCountHeader,
   ClassParticipationCountHeaderItemProps,
 } from "@/components/ClassParticipationCountHeader";
+import colors from "@/constants/theme/colors";
 import useGetSignUpsByClass from "@/hooks/useGetSignUps";
 
 const colorForClass = (className: string) => {
   switch (className) {
+    case "LMP3":
+      return colors.lmp3Pro;
     case "GT3":
-      return "#fce8b2";
+      return colors.gt3Pro;
     case "GT4":
-      return "#a4c2f4";
-    case "TCR":
-      return "#ea9999";
+      return colors.gt4Pro;
     default:
       return "#666";
   }
