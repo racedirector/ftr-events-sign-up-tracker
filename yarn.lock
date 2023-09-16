@@ -10074,7 +10074,7 @@ __metadata:
     fs-extra: ^11.1.1
     gh-pages: ^6.0.0
     html-webpack-plugin: ^5.5.0
-    i18n-js: ^4.3.0
+    i18n-js: ^4.3.2
     identity-obj-proxy: ^3.0.0
     jest: ^27
     jest-resolve: ^29.6.4
@@ -10848,13 +10848,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"i18n-js@npm:^4.3.0":
-  version: 4.3.0
-  resolution: "i18n-js@npm:4.3.0"
+"i18n-js@npm:^4.3.2":
+  version: 4.3.2
+  resolution: "i18n-js@npm:4.3.2"
   dependencies:
     bignumber.js: "*"
+    lodash: "*"
     make-plural: "*"
-  checksum: 085f6f55b4ec87d326f96ea8664417c9305f7b0a7519073a2d23bca4b8da595c014ffa13c522e90b0ce1e0b5b3d04f4e23920732829a0a1837b1486a0a14aee2
+  checksum: 08a051dba75d93447e2021c1feb92f34c9034b5a818957885ea19ac58954d764c848c4deaaf46ada3e15d51f61ad9f7e0bf4ddffa3c765871ff1b26638ca0a8f
   languageName: node
   linkType: hard
 
@@ -12623,7 +12624,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lodash@npm:^4.17.15, lodash@npm:^4.17.20, lodash@npm:^4.17.21, lodash@npm:^4.7.0":
+"lodash@npm:*, lodash@npm:^4.17.15, lodash@npm:^4.17.20, lodash@npm:^4.17.21, lodash@npm:^4.7.0":
   version: 4.17.21
   resolution: "lodash@npm:4.17.21"
   checksum: eb835a2e51d381e561e508ce932ea50a8e5a68f4ebdd771ea240d3048244a8d13658acbd502cd4829768c56f2e16bdd4340b9ea141297d472517b83868e677f7
