@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "email": "justin@treehousetechnology.io",
-  "homepage": "https://racedirector.github.io/ftr-events-sign-up-tracker/",
+  "homepage": "https://ftr.events/",
   "license": "MIT",
   "scripts": {
     "build": "node scripts/build.js",
