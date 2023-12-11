@@ -47,7 +47,7 @@ jobs:
         uses: actions/configure-pages@v3
       - name: Deploy to Github Pages
         id: pages-deployment
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v3
 
   # Uncomment after configuring AWS credentials
   # deploy-s3:
